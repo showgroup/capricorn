@@ -1,0 +1,103 @@
+p, li {
+    
+}
+
+a {
+    color: $text-color;
+    text-decoration: none;
+
+    &:visited {
+        color: $text-color;
+    }
+}
+
+.text,
+.text--small,
+.text--large {
+    em {
+        color: lighten($text-color, 25%);
+        font-style: normal;
+    }
+}
+
+.text {
+    color: $text-color;
+    letter-spacing: 0.03em;
+    font-size: $base*2;
+    font-weight: normal;
+    line-height: 32px;
+
+    @include media-query($on-touch) {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+.text--small {
+    color: $text-color;
+    font-size: $base*1.5;
+    letter-spacing: 0.05em;
+    line-height: $base*2;
+}
+
+.text--large {
+    color: $text-color;
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    line-height: 42px;
+}
+
+.grid {
+    @include flexbox();
+    @include align-content(stretch);
+    @include align-items(stretch);
+    @include flex-flow(row wrap);
+    @include justify-content(stretch);
+    background-color: red;
+    padding: $base*4;
+    padding-right: $base*3;
+    position: relative;
+    width: $full;
+
+    .col {
+        background-color: yellow;
+        padding-bottom: $base;
+        padding-right: $base;
+        width: $full/6;
+        * {
+            background-color: blue;
+            color: white;
+            display: block;
+        }
+
+        &.col--2 {
+            width: $full/3;
+        }
+        &.col--3 {
+            width: $full/2;
+        }
+        &.col--4 {
+            width: $full*4/6;
+        }
+        &.col--5 {
+            width: $full*5/6;
+        }
+        &.col--6 {
+            width: $full;
+        }
+        &.offset-1 {
+            margin-left: $full/6;
+        }
+        &.offset-2 {
+            margin-left: $full/3;
+        }
+        &.offset-3 {
+            margin-left: $full/2;
+        }
+        &.offset-4 {
+            margin-left: $full*4/6;
+        }
+    }
+}
+

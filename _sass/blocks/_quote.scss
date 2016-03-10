@@ -1,0 +1,59 @@
+.block--quote {
+	background-color: white;
+	padding: $base*4 $base*2 $base*4 $base*4;
+
+	@include media-query($on-touch) {
+		padding: $base*2 0 $base*2 $base*2;
+    }
+
+	article {
+		//border: solid 1px blue;
+		padding-right: $base*2;
+
+		blockquote {
+			.text--large {
+				color: lighten($text-color, 25%);
+			}
+			.blockquote__attribution {
+				color: lighten($text-color, 25%);
+				padding-top: $base*2;
+			}
+		}
+
+		&[data-col="1"] {
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="2"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="3"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="4"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="5"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="6"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    }
+}

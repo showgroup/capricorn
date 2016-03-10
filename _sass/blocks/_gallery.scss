@@ -1,0 +1,62 @@
+.block--gallery {
+	position: relative;
+
+	div {
+        height: $full;
+
+		figure {
+            background-color: white;
+            background-position: center;
+            background-repeat: no-repeat;
+            bottom: 0;
+            height: $full;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+
+			&[data-col="1"] {
+    	     	background-size: $full/6 auto;
+
+                @include media-query($on-touch) {
+                    background-size: cover;
+                }
+    	    }
+    	    &[data-col="2"] {
+    	        background-size: $full/3 auto;
+
+                @include media-query($on-touch) {
+                    background-size: cover;
+                }
+    	    }
+    	    &[data-col="3"] {
+    	        background-size: $full/2 auto;
+
+                @include media-query($on-touch) {
+                    background-size: cover;
+                }
+    	    }
+    	    &[data-col="4"] {
+    	        background-size: $full*4/6 auto;
+
+                @include media-query($on-touch) {
+                    background-size: cover;
+                }
+    	    }
+    	    &[data-col="5"] {
+    	        background-size: $full*5/6 auto;
+
+                @include media-query($on-touch) {
+                    background-size: cover;
+                }
+    	    }
+    	    &[data-col="6"] {
+    	        background-size: $full auto;
+
+                @include media-query($on-touch) {
+                    background-size: cover;
+                }
+    	    }
+		}
+	}
+}

@@ -1,0 +1,90 @@
+.grid {
+    @include flexbox();
+    @include align-content(stretch);
+    @include align-items(stretch);
+    @include flex-flow(row wrap);
+    @include justify-content(stretch);
+    background-color: red;
+    padding: $base*4;
+    padding-right: $base*3;
+    position: relative;
+    width: $full;
+
+    .col {
+        background-color: yellow;
+        padding-bottom: $base;
+        padding-right: $base;
+        width: $full/6;
+        * {
+            background-color: blue;
+            color: white;
+            display: block;
+        }
+
+        &.col--2 {
+            width: $full/3;
+        }
+        &.col--3 {
+            width: $full/2;
+        }
+        &.col--4 {
+            width: $full*4/6;
+        }
+        &.col--5 {
+            width: $full*5/6;
+        }
+        &.col--6 {
+            width: $full;
+        }
+        &.offset-1 {
+            margin-left: $full/6;
+        }
+        &.offset-2 {
+            margin-left: $full/3;
+        }
+        &.offset-3 {
+            margin-left: $full/2;
+        }
+        &.offset-4 {
+            margin-left: $full*4/6;
+        }
+    }
+}
+
+.golden {
+    @include flexbox();
+    @include align-content(flex-start);
+    @include align-items(flex-start);
+    @include flex-flow(row wrap);
+    @include justify-content(flex-start);
+    background-color: black;
+    display: none;
+    height: $base*30;
+
+    * {
+        color: black;
+        height: $base*10;
+        font-size: 20px;
+        letter-spacing: 0;
+    }
+    .box-xsmall {
+        background-color: green;
+        width: $xsmall;
+    }
+    .box-small {
+        background-color: red;
+        width: $small;
+    }
+    .box-med {
+        background-color: yellow;
+        width: $med;
+    }
+    .box-large {
+        background-color: gold;
+        width: $large;
+    }
+    .box-xlarge {
+        background-color: blue;
+        width: $xlarge;
+    }
+}

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/* Slider */
+
+.slick-list {
+    .slick-loading & {
+        background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+    }
+}
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-size: 0px;
+    height: $full;
+    line-height: 0px;
+    opacity: 1;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100px;
+    z-index: 1000;
+}
+
+.slick-prev {
+    left: 0;
+    width: $med;
+}
+
+.slick-next {
+    right: 0;
+    width: $large;
+}

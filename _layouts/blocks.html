@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html style="height:100%;">
+
+    {% include head.html %}
+
+    <body class="page--{{ page.slug }}">
+    
+        <header>
+            <span class="sg-logo"><a href="/index.html" class="text--small">Show Group</a></span>
+    
+            <div class="sg-menu text--small" role="navigation">
+                <span><a href="/projects" class="text--small">Projects</a>, </span>
+                <span><a href="/studio" class="text--small">Studio</a>, and</span>
+                <span><a href="#contact" class="text--small toggle--contact">Contact</a></span>
+            </div>
+
+            <a href="#" class="toggle--overlay">
+                <span class="toggle__top"></span>
+                <span class="toggle__centre"></span>
+                <span class="toggle__bottom"></span>
+            </a>
+        </header>
+
+        {% include contact.html %}
+
+        <div class="blocks">
+            {{ content }}
+        </div>
+
+    </body>
+
+</html>

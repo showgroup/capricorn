@@ -1,0 +1,9 @@
+<div class="block block--image{% if post.cover %} block--cover{% endif %}">
+	
+	{% for image in post.images limit:1 %}
+	<figure>
+		<img src="/assets/{{ image.file }}">
+	</figure>
+	{% endfor %}
+
+</div>

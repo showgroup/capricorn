@@ -1,0 +1,40 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+@import
+    "themes/theme-default",
+    "calypso/prefixer",
+    "calypso/mixins",
+    "calypso/base"
+;
+@import
+    "mixins",
+    "base",
+    "layout",
+    "slick",
+    "slick-theme",
+    "blocks/gallery",
+    "blocks/image",
+    "blocks/text",
+    "blocks/quote",
+    "blocks/video",
+    "blocks/website",
+    "blocks/grid",
+    "blocks/press",
+    "blocks/related"
+;

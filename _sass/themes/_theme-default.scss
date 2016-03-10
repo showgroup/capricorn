@@ -1,0 +1,38 @@
+$base: 12px;
+
+$text-color: #625d58;
+$accent-color: rgba(249,66,58,1);
+
+.block {
+	&[data-theme="dark"] {
+        background-color: $text-color;
+
+		.text,
+		.text--large,
+		.text--small {
+			color: white;
+
+			a {
+				color: white;
+			}
+		}
+	}
+	&[data-theme="blue"] {
+		background-color: blue;
+
+		.text,
+		.text--large,
+		.text--small {
+			color: white;
+		}
+	}
+	&[data-theme="redbull"] {
+		background-color: blue;
+
+		.text,
+		.text--large,
+		.text--small {
+			color: red;
+		}
+	}
+}

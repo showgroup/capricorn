@@ -1,0 +1,66 @@
+.block--video {
+	background-color: pink;
+	padding: $base*4;
+	position: relative;
+	overflow: hidden;
+
+	@include media-query($on-touch) {
+		padding: $base*2;
+    }
+
+    &[data-size="full"] {
+    	background-color: black;
+    }
+
+	figure {
+		position: relative;
+
+		iframe {
+			height: $full;
+			width: $full;
+		}
+
+		&[data-col="1"] {
+    		height: $med;
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="2"] {
+    		height: $med;
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="3"] {
+    		height: $large;
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="4"] {
+    		height: $xlarge;
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="5"] {
+    		height: $xlarge;
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="6"] {
+    		height: $full;
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+	}
+}

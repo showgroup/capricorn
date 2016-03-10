@@ -1,0 +1,11 @@
+.block--image {
+	background-color: white;
+
+	figure {
+		margin-bottom: $base;
+	}
+	figcaption {
+		text-align: center;
+		width: $large;
+	}
+}

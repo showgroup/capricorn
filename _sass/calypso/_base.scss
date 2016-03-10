@@ -1,0 +1,73 @@
+/**
+ * Reset some basic elements
+ */
+body, p, ul, ol, li, em, strong,
+h1, h2, h3, h4, h5, h6, blockquote, 
+hr, dl, dd, figure, input, textarea, 
+button {
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+address {
+    font-style: normal;
+}
+
+/**
+ * Basic styling
+ */
+
+body {
+    -webkit-text-size-adjust: 100%;
+    color: $text-color;
+    font-family: 'Univers LT Std', Helvetica, Arial;
+    font-size: 36px;
+    letter-spacing: 0em;
+    line-height: 42px;
+}
+
+* {
+    @include box-sizing(border-box);
+}
+
+button {
+    background-color: transparent;
+}
+
+$golden:          1.618;
+$full:            100%;
+
+$gld10:           $full / $golden;
+$gld9:            $full - $gld10;
+$gld8:            $gld9 / $golden;
+$gld7:            $gld9 - $gld8;
+$gld6:            $gld7 / $golden;
+$gld5:            $gld7 - $gld6;
+$gld4:            $gld5 / $golden;
+$gld3:            $gld5 - $gld4;
+$gld2:            $gld3 / $golden;
+$gld1:            $gld3 - $gld2;
+
+$xlarge:          $full - ($gld7 + $gld7);
+$large:           $gld10;
+$med:             $gld9;
+$small:           $gld8;
+$xsmall:          $gld7;
+$half:            50%;
+
+$base: 24px !default;
+
+$on-touch:           800px;
+$on-laptop:         1000px;
+$on-desktop:        1600px;
+
+.pull--right {
+	float: right;
+}
+

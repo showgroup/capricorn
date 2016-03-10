@@ -1,0 +1,106 @@
+.block--text {
+	padding: $base*4 $base*2 $base*4 $base*4;
+	overflow: hidden;
+
+	@include media-query($on-touch) {
+		padding: $base*2 0 $base*2 $base*2;
+    }
+
+    &.remove--padding {
+    	padding-bottom: 0;
+    	padding-top: 0;
+    }
+
+	article,
+	figure {
+		padding-right: $base*2;
+		position: relative;
+		text-align: left;
+
+		@include media-query($on-touch) {
+
+    	}
+
+    	> img {
+    		display: block;
+    		height: auto;
+    		width: $full;
+    	}
+
+    	figcaption {
+			color: lighten($text-color, 50%);
+    		padding-top: $base*2;
+
+    		&[data-justify="center"] {
+				text-align: center;
+			}
+			&[data-justify="right"] {
+				text-align: right;
+			}
+    	}
+
+		p {
+			text-indent: $base*4;
+
+			@include media-query($on-touch) {
+				text-indent: $base*2;
+    		}
+			&:first-child {
+				text-indent: 0;
+			}
+
+			&[data-justify="center"] {
+				text-align: center;
+			}
+			&[data-justify="right"] {
+				text-align: right;
+			}
+		}
+
+		.block__label {
+			@extend .text--large;
+			margin-bottom: $base*3;
+		}
+
+		address,
+		section {
+			margin-bottom: $base*2;
+		}
+
+		&[data-col="1"] {
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="2"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="3"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="4"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="5"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="6"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+	}
+}

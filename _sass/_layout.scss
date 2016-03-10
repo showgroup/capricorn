@@ -1,0 +1,327 @@
+$contact-height: $base*10;
+$header-height: $base*10;
+
+body {
+    background-color: $text-color;
+    height: $full;
+    overflow-y: hidden;
+    padding-top: $base*6;
+    position: relative;
+
+    &.show--contact {
+        .blocks {
+            @include transitionEase(opacity,0.3s);
+            opacity: 0;
+            overflow-y: scroll;
+            pointer-events: none;
+        }
+    }
+
+    &.page--projects {
+        .blocks {
+            padding-top: $base*6;
+        }
+    }
+}
+
+header {
+    height: $header-height;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: $full;
+    z-index: 100;
+
+    &.header--invert {
+        .sg-logo,
+        .sg-menu {
+            @include transitionEase(color,0.3s);
+            color: white;
+
+            .text,
+            .text--small {
+                @include transitionEase(color,0.3s);
+                color: white;
+            }
+        }
+    }
+    &.header--hide {
+        .sg-logo,
+        .sg-menu {
+            opacity: 0;
+        }
+    }
+
+    .toggle--overlay {
+        display: none;
+        height: $base*2;
+        position: absolute;
+        right: $base*2;
+        top: $base*2;
+        width: $base*2;
+        z-index: 1000;
+
+        @include media-query($on-touch) {
+            display: block;
+        }
+
+        span {
+            @include transitionEase(all, 0.3s);
+            @include transform-origin(center center);
+            background-color: $text-color;
+            height: 2px;
+            position: absolute;
+            width: $base*2;
+
+            &.toggle__top {
+                top: 4px;
+            }
+            &.toggle__centre {
+                opacity: 1;
+                top: 11px;
+            }
+            &.toggle__bottom {
+                bottom: 4px;
+            }
+        }
+
+        &.close {
+            span {
+                @include transitionEase(all, 0.3s);
+                &.toggle__top {
+                    @include rotate(45);
+                    top: 11px;
+                }
+                &.toggle__centre {
+                    opacity: 0;
+                }
+                &.toggle__bottom {
+                    @include rotate(-45);
+                    bottom: 11px;
+                }
+            }
+        }
+    }
+}
+
+.sg-logo {
+    left: $base*4;
+    position: absolute;
+    top: $base*4;
+    z-index: 100;
+
+    a {
+        @include transitionEase(color,0.3s);
+        color: $text-color;
+        display: block;
+    }
+
+    @include media-query($on-touch) {
+        left: $base*2;
+        top: $base*2;
+    }
+}
+
+.sg-menu {
+    position: absolute;
+    right: $base*4;
+    top: $base*4;
+    z-index: 100;
+
+    &.text--small,
+    .text--small {
+        @include transitionEase(color,0.3s);
+    }
+
+    @include media-query($on-touch) {
+        @include transitionEase(opacity, 0.5s);
+        background-color: rgba(255,255,255,0.9);
+        outline: solid 500px rgba(255,255,255,0.9);
+        opacity: 0;
+        padding: $base*2;
+        right: 0;
+        text-align: right;
+        top: $base*4;
+
+        &.visible--mobile {
+            @include transitionEase(opacity, 0.5s);
+            opacity: 1;
+        }
+
+        span {
+            display: block;
+            text-align: right;
+        }
+    }
+}
+
+.blocks {
+    @include transitionEase(opacity,0.3s);
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    overflow-y: scroll;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+
+    @include media-query($on-touch) {
+
+    }
+}
+
+.block {
+    @include flexbox();
+    @include flex-flow(row wrap);
+    //border-bottom: solid 1px red;
+    overflow: hidden;
+    width: $full;
+
+    @include media-query($on-touch) {
+        @include flex-flow(column wrap);
+    }
+
+    &.block--contact {
+        @include media-query($on-touch) {
+            article {
+                margin-bottom: $base*2;
+            }
+        }
+    }
+
+    &.block--bg-img {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    // Block height options
+    &[data-size="full"] {
+        height: $full;
+        margin-bottom: 0;
+    }
+    &[data-size="half"] {
+        height: 50%;
+    }
+    &[data-size="large"] {
+        height: $large;
+    }
+    &[data-size="med"] {
+        height: $med;
+    }
+    &[data-size="small"] {
+        height: $small;
+    }
+    &[data-size="xlarge"] {
+        height: $xlarge;
+    }
+    &[data-size="xsmall"] {
+        height: $xsmall;
+    }
+
+    // Block contents horizontal orientation
+    &[data-x="center"] {
+        @include justify-content(center);
+    }
+    &[data-x="left"] {
+        @include justify-content(flex-start);
+    }
+    &[data-x="right"] {
+        @include justify-content(flex-end);
+    }
+
+    // Block contents vertical orientation
+    &[data-y="center"] {
+        @include align-items(center);
+    }
+    &[data-y="top"] {
+        @include align-items(flex-start);
+    }
+    &[data-y="bottom"] {
+        @include align-items(flex-end);
+    }
+    &[data-y="baseline"] {
+        @include align-items(baseline);
+    }
+    &[data-y="stretch"] {
+        @include align-items(stretch);
+    }
+
+    &[data-margin="1"] {
+        margin-bottom: $base;
+    }
+    &[data-margin="2"] {
+        margin-bottom: $base*2;
+    }
+    &[data-margin="3"] {
+        margin-bottom: $base*3;
+    }
+    &[data-margin="4"] {
+        margin-bottom: $base*4;
+    }
+    &[data-margin="10"] {
+        margin-bottom: $base*10;
+    }
+
+    > article,
+    > figure,
+    > ul {
+        &[data-col="1"] {
+            width: $full/6;
+        }
+        &[data-col="2"] {
+            width: $full/3;
+        }
+        &[data-col="3"] {
+            width: $full/2;
+        }
+        &[data-col="4"] {
+            width: $full*4/6;
+        }
+        &[data-col="5"] {
+            width: $full*5/6;
+        }
+        &[data-col="6"] {
+            width: $full;
+        }
+
+        &[data-offset="1"] {
+            margin-left: $full/6;
+
+            @include media-query($on-touch) {
+                margin-left: 0;
+            }
+        }
+        &[data-offset="2"] {
+            margin-left: $full/3;
+
+            @include media-query($on-touch) {
+                margin-left: 0;
+            }
+        }
+        &[data-offset="3"] {
+            width: $full/2;
+
+            @include media-query($on-touch) {
+                margin-left: 0;
+            }
+        }
+        &[data-offset="4"] {
+            width: $full*4/6;
+
+            @include media-query($on-touch) {
+                margin-left: 0;
+            }
+        }
+        &[data-offset="5"] {
+            width: $full*5/6;
+
+            @include media-query($on-touch) {
+                margin-left: 0;
+            }
+        }
+    }
+}
+

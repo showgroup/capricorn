@@ -1,0 +1,272 @@
+.block--website {
+	padding: $base*4 $base*2 $base*4 $base*4;
+	overflow: hidden;
+
+	@include media-query($on-touch) {
+		padding: $base*2 0 $base*2 $base*2;
+    }
+
+    &.anchor--bottom {
+    	padding-bottom: 0;
+    }
+
+    figure {
+    	padding-top: $base*3;
+		padding-right: $base*2;
+		position: relative;
+		text-align: left;
+
+		@include media-query($on-touch) {
+
+    	}
+
+    	.block__mobile {
+			@include box-shadow(0,$base,$base,rgba(98,93,88,0.15),$inset:false);
+    		background-color: #222;
+			border-radius: $base*2 $base*2 0 0;
+			bottom: 0;
+			padding: 0;
+    		padding-top: $base*5;
+    		position: absolute;
+    		width: $base*25;
+    		z-index: 300;
+
+    		&::before,
+    		&::after {
+    			background-color: #666;
+				border-radius: $base/2;
+    			height: $base/2;
+    			content:'';
+    			margin-top: $base/-4;
+    			position: absolute;
+    			top: $base*2.5;
+    		}
+
+    		&::before {
+    			left: $base*10;
+    			width: $base/2;
+    		}
+    		&::after {
+    			left: $base*11;
+    			width: $base*4;
+    		}
+
+    		&[data-orient="left"] {
+    			left: 0;
+
+    			&[data-offset="2"] {
+    				left: $base*-2;
+    			}
+    			&[data-offset="4"] {
+    				left: $base*-4;
+    			}
+    			&[data-offset="6"] {
+    				left: $base*-6;
+    			}
+    			&[data-offset="8"] {
+    				left: $base*-8;
+    			}
+    		}
+    		&[data-orient="right"] {
+    			right: $base*2;
+
+    			&[data-offset="2"] {
+    				right: 0;
+    			}
+    			&[data-offset="4"] {
+    				right: $base*-2;
+    			}
+    			&[data-offset="6"] {
+    				right: $base*-4;
+    			}
+    			&[data-offset="8"] {
+    				right: $base*-6;
+    			}
+    		}
+
+    		@include media-query($on-touch) {
+    			height: $xlarge;
+    			padding-top: $base*4;
+    			width: $base*15;
+
+    			&::before,
+    			&::after {
+    				background-color: #666;
+					border-radius: $base/4;
+    				height: $base/4;
+    				content:'';
+    				margin-top: $base/-8;
+    				position: absolute;
+    				top: $base*2;
+    			}
+    			&::before {
+    				left: $base*6;
+    				width: $base/4;
+    			}
+    			&::after {
+    				left: $base*6.5;
+    				width: $base*3;
+    			}
+
+    			&[data-orient="left"] {
+    				left: 0;
+	
+    				&[data-offset="2"] {
+    					left: $base*-1;
+    				}
+    				&[data-offset="4"] {
+    					left: $base*-1;
+    				}
+    				&[data-offset="6"] {
+    					left: $base*-1;
+    				}
+    				&[data-offset="8"] {
+    					left: $base*-1;
+    				}
+    			}
+    			&[data-orient="right"] {
+    				right: $base;
+	
+    				&[data-offset="2"] {
+    					right: $base;
+    				}
+    				&[data-offset="4"] {
+    					right: $base;
+    				}
+    				&[data-offset="6"] {
+    					right: $base;
+    				}
+    				&[data-offset="8"] {
+    					right: $base;
+    				}
+    			}
+    		}
+    	}
+
+    	.block__browser {
+    		background-color: #CCC;
+			border-radius: 6px 6px 0 0;
+    		height: $base*3;
+    		left: 0;
+    		opacity: 1;
+    		position: absolute;
+    		right: $base*2;
+    		top: 0;
+
+    		.browser__controls {
+				background-color: white;
+				border-radius: 50%;
+				height: $base;
+				left: $base*2.5;
+				position: absolute;
+				top: $base;
+				width: $base;
+	
+				&::after,
+				&::before {
+					background-color: white;
+					border-radius: 50%;
+					content:'';
+					height: $base;
+					position: absolute;
+					top: 0;
+					width: $base;
+				}
+				&::after {
+					right: $base*1.5;
+				}
+				&::before {
+					left: $base*1.5;
+				}
+			}
+    	}
+
+    	> img {
+    		display: block;
+    		height: auto;
+    		width: $full;
+    	}
+
+    	&[data-col="1"] {
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="2"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="3"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="4"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="5"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="6"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    }
+
+
+
+
+	.web__browser {
+		@include box-shadow(0,$base,$base,rgba(98,93,88,0.15),$inset:false);
+		background-color: rgba(98,93,88,0.5);
+		border-radius: 6px 6px 0 0;
+		overflow: hidden;
+		padding: $base*3 0 0 0;
+		position: relative;
+		width: $large;
+
+		.fake-controls {
+			background-color: white;
+			border-radius: 50%;
+			height: $base;
+			left: $base*2.5;
+			position: absolute;
+			top: $base;
+			width: $base;
+
+			&::after,
+			&::before {
+				background-color: white;
+				border-radius: 50%;
+				content:'';
+				height: $base;
+				position: absolute;
+				top: 0;
+				width: $base;
+			}
+			&::after {
+				right: $base*1.5;
+			}
+			&::before {
+				left: $base*1.5;
+			}
+		}
+
+		> img {
+			display: block;
+			height: auto;
+			width: $full;
+		}
+	}
+}

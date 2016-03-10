@@ -1,0 +1,72 @@
+.block--press {
+	padding: $base*4 $base*2 $base*4 $base*4;
+	overflow: hidden;
+
+	@include media-query($on-touch) {
+		padding: $base*2 0 $base*2 $base*2;
+    }
+
+    ul {
+		padding-right: $base*2;
+		position: relative;
+		text-align: left;
+
+		@include media-query($on-touch) {
+
+    	}
+
+		> li {
+
+			@include media-query($on-touch) {
+    		}
+
+    		a {
+    			display: block;
+
+    			span {
+					color: lighten($text-color, 25%);
+    			}
+    		}
+
+    		.press__source {
+    			text-transform: uppercase;
+    		}
+		}
+
+		&[data-col="1"] {
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="2"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="3"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="4"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="5"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+    	&[data-col="6"] {
+
+            @include media-query($on-touch) {
+				width: $full;
+            }
+    	}
+	}
+}

@@ -1,0 +1,12 @@
+.block--grid {
+	background-color: white;
+
+	figure,
+	article {
+		margin-right: $base;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
