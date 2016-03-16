@@ -1,13 +1,18 @@
 $(document).ready(function(){
-    $('.toggle--contact').click(function(){
-        console.log('contact clicked');
-        $('body').toggleClass('show--contact');
-        $('header').toggleClass('header--invert');
-        $('.sg-menu').removeClass('visible--mobile');
+    $('.show--contact').click(function(){
+        console.log('show contact');
+        $('body').addClass('visible--contact');
+        $('.sg-menu').removeClass('visible');
+        $('.sg-logo').addClass('invert');
+        $('.toggle').addClass('visible').addClass('invert').addClass('toggle--close');
     });
 
-    $('.video__cover').click(function(){
-        $(this).addClass('hidden');
+    $('.toggle--close').click(function(){
+        console.log('close contact');
+        $('body').removeClass('visible--contact');
+        $('.sg-menu').addClass('visible');
+        $('.sg-logo').removeClass('invert');
+        $(this).removeClass('visible').removeClass('toggle--close');
     });
 
     $('.block--gallery').slick({

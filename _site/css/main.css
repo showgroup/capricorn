@@ -183,7 +183,7 @@ body {
   overflow-y: hidden;
   padding-top: 72px;
   position: relative; }
-  body.show--contact .blocks {
+  body.visible--contact .blocks {
     -webkit-transition: opacity 0.3s ease-in-out;
     -moz-transition: opacity 0.3s ease-in-out;
     -o-transition: opacity 0.3s ease-in-out;
@@ -220,18 +220,32 @@ header {
   header.header--hide .sg-logo,
   header.header--hide .sg-menu {
     opacity: 0; }
-  header .toggle--overlay {
+  header .toggle {
+    -webkit-box-sizing: content-box;
+    -ms-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: solid 24px transparent;
     display: none;
     height: 24px;
+    opacity: 0;
     position: absolute;
     right: 24px;
     top: 24px;
     width: 24px;
     z-index: 1000; }
     @media screen and (max-width: 800px) {
-      header .toggle--overlay {
-        display: block; } }
-    header .toggle--overlay span {
+      header .toggle {
+        display: block;
+        opacity: 1;
+        right: 0;
+        top: 0; } }
+    header .toggle.visible {
+      display: block;
+      opacity: 1; }
+    header .toggle.invert span {
+      background-color: white; }
+    header .toggle span {
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
@@ -243,30 +257,31 @@ header {
       transform-origin: center center;
       background-color: #625d58;
       height: 2px;
+      left: 0;
       position: absolute;
       width: 24px; }
-      header .toggle--overlay span.toggle__top {
+      header .toggle span.toggle__top {
         top: 4px; }
-      header .toggle--overlay span.toggle__centre {
+      header .toggle span.toggle__centre {
         opacity: 1;
         top: 11px; }
-      header .toggle--overlay span.toggle__bottom {
+      header .toggle span.toggle__bottom {
         bottom: 4px; }
-    header .toggle--overlay.close span {
+    header .toggle.toggle--close span {
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
       -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out; }
-      header .toggle--overlay.close span.toggle__top {
+      header .toggle.toggle--close span.toggle__top {
         -moz-transform: rotate(45deg);
         -o-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
         top: 11px; }
-      header .toggle--overlay.close span.toggle__centre {
+      header .toggle.toggle--close span.toggle__centre {
         opacity: 0; }
-      header .toggle--overlay.close span.toggle__bottom {
+      header .toggle.toggle--close span.toggle__bottom {
         -moz-transform: rotate(-45deg);
         -o-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
@@ -286,12 +301,19 @@ header {
     transition: color 0.3s ease-in-out;
     color: #625d58;
     display: block; }
+  .sg-logo.invert a {
+    color: white; }
   @media screen and (max-width: 800px) {
     .sg-logo {
       left: 24px;
       top: 24px; } }
 
 .sg-menu {
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
   position: absolute;
   right: 48px;
   top: 48px;
@@ -302,6 +324,12 @@ header {
     -moz-transition: color 0.3s ease-in-out;
     -o-transition: color 0.3s ease-in-out;
     transition: color 0.3s ease-in-out; }
+  .sg-menu.visible {
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1; }
   @media screen and (max-width: 800px) {
     .sg-menu {
       -webkit-transition: opacity 0.5s ease-in-out;
@@ -1046,38 +1074,6 @@ header {
       .block--press ul[data-col="6"] {
         width: 100%; } }
 
-.sg-projects {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  -moz-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  padding: 120px 24px 48px 48px;
-  position: relative; }
-  @media screen and (max-width: 800px) {
-    .sg-projects {
-      padding: 120px 0 24px 24px; } }
-  .sg-projects .project {
-    display: block;
-    padding: 0 24px 48px 0;
-    width: 33.33333%; }
-    .sg-projects .project .project__img {
-      background-color: #EEE;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 180px;
-      margin-bottom: 24px; }
-    .sg-projects .project .project__label {
-      margin-left: -1px; }
-    @media screen and (max-width: 800px) {
-      .sg-projects .project {
-        width: 100%; } }
-
 .block--related {
   display: -webkit-box;
   display: -moz-box;
@@ -1099,6 +1095,12 @@ header {
     display: block;
     padding: 0 24px 48px 0;
     width: 33.33333%; }
+    @media screen and (max-width: 800px) {
+      .block--related .related__tile {
+        display: none;
+        width: 100%; }
+        .block--related .related__tile:first-child {
+          display: block; } }
     .block--related .related__tile .tile__img {
       background-color: #EEE;
       background-position: center;
