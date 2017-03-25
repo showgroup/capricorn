@@ -5,26 +5,26 @@
 
     <body class="page--{{ page.slug }}">
     
-        <header>
+        <header id="topbar" style="top:0;">
             <span class="sg-logo"><a href="/index.html" class="text--small">Show Group</a></span>
     
-            <div class="sg-menu text--small visible" role="navigation">
+            <div class="sg-menu text--small" role="navigation">
                 <span><a href="/projects" class="text--small">Projects</a>, </span>
                 <span><a href="/studio" class="text--small">Studio</a>, and</span>
-                <span><a href="#contact" class="text--small show--contact">Contact</a></span>
+                <span><a href="#contact" class="text--small toggle--contact">Contact</a></span>
             </div>
 
-            <a href="#" class="toggle">
+            <a href="#" class="toggle toggle--menu">
                 <span class="toggle__top"></span>
                 <span class="toggle__centre"></span>
                 <span class="toggle__bottom"></span>
             </a>
         </header>
 
-        {% include contact.html %}
-
         <div class="blocks">
             {{ content }}
+
+            {% include contact.html %}
         </div>
 
     </body>

@@ -26,6 +26,15 @@ $accent-color: rgba(249,66,58,1);
 			color: white;
 		}
 	}
+	&[data-theme="contact"] {
+		background-color: red;
+
+		.text,
+		.text--large,
+		.text--small {
+			color: white;
+		}
+	}
 	&[data-theme="redbull"] {
 		background-color: blue;
 

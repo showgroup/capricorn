@@ -48,6 +48,58 @@ a {
     line-height: 42px;
 }
 
+.toggle {
+    @include box-sizing(content-box);
+    border: solid $base*2 transparent;
+    height: $base*2;
+    width: $base*2;
+
+    &.invert {
+        span {
+            background-color: white;
+        }
+    }
+
+    span {
+        @include transitionEase(all, 0.3s);
+        @include transform-origin(center center);
+        background-color: $text-color;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        width: $base*2;
+
+        &.toggle__top {
+            top: 4px;
+        }
+        &.toggle__centre {
+            opacity: 1;
+            top: 11px;
+        }
+        &.toggle__bottom {
+            bottom: 4px;
+        }
+    }
+
+    &.toggle--close {
+        span {
+
+            @include transitionEase(all, 0.3s);
+            &.toggle__top {
+                @include rotate(45);
+                top: 11px;
+            }
+            &.toggle__centre {
+                opacity: 0;
+            }
+            &.toggle__bottom {
+                @include rotate(-45);
+                bottom: 11px;
+            }
+        }
+    }
+}
+
 .grid {
     @include flexbox();
     @include align-content(stretch);

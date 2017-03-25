@@ -26,6 +26,16 @@
   .block--text figure .block[data-theme="blue"] .block__label,
   .block[data-theme="blue"] .text--small {
     color: white; }
+.block[data-theme="contact"] {
+  background-color: red; }
+  .block[data-theme="contact"] .text,
+  .block[data-theme="contact"] .text--large,
+  .block[data-theme="contact"] .block--text article .block__label,
+  .block--text article .block[data-theme="contact"] .block__label,
+  .block[data-theme="contact"] .block--text figure .block__label,
+  .block--text figure .block[data-theme="contact"] .block__label,
+  .block[data-theme="contact"] .text--small {
+    color: white; }
 .block[data-theme="redbull"] {
   background-color: blue; }
   .block[data-theme="redbull"] .text,
@@ -120,6 +130,60 @@ a {
   letter-spacing: 0.03em;
   line-height: 42px; }
 
+.toggle {
+  -webkit-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: solid 24px transparent;
+  height: 24px;
+  width: 24px; }
+  .toggle.invert span {
+    background-color: white; }
+  .toggle span {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    moz-transform-origin: center center;
+    -o-transform-origin: center center;
+    -ms-transform-origin: center center;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    background-color: #625d58;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 24px; }
+    .toggle span.toggle__top {
+      top: 4px; }
+    .toggle span.toggle__centre {
+      opacity: 1;
+      top: 11px; }
+    .toggle span.toggle__bottom {
+      bottom: 4px; }
+  .toggle.toggle--close span {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .toggle.toggle--close span.toggle__top {
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 11px; }
+    .toggle.toggle--close span.toggle__centre {
+      opacity: 0; }
+    .toggle.toggle--close span.toggle__bottom {
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      bottom: 11px; }
+
 .grid {
   display: -webkit-box;
   display: -moz-box;
@@ -180,7 +244,6 @@ a {
 body {
   background-color: #625d58;
   height: 100%;
-  overflow-y: hidden;
   padding-top: 72px;
   position: relative; }
   body.visible--contact .blocks {
@@ -191,10 +254,13 @@ body {
     opacity: 0;
     overflow-y: scroll;
     pointer-events: none; }
+  body.visible--contact .sg-menu {
+    display: none; }
   body.page--projects .blocks {
     padding-top: 72px; }
 
 header {
+  background-color: yellow;
   height: 120px;
   left: 0;
   position: absolute;
@@ -221,73 +287,19 @@ header {
   header.header--hide .sg-menu {
     opacity: 0; }
   header .toggle {
-    -webkit-box-sizing: content-box;
-    -ms-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    border: solid 24px transparent;
     display: none;
-    height: 24px;
-    opacity: 0;
     position: absolute;
     right: 24px;
     top: 24px;
-    width: 24px;
     z-index: 1000; }
-    @media screen and (max-width: 800px) {
-      header .toggle {
-        display: block;
-        opacity: 1;
-        right: 0;
-        top: 0; } }
     header .toggle.visible {
       display: block;
       opacity: 1; }
-    header .toggle.invert span {
-      background-color: white; }
-    header .toggle span {
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out;
-      moz-transform-origin: center center;
-      -o-transform-origin: center center;
-      -ms-transform-origin: center center;
-      -webkit-transform-origin: center center;
-      transform-origin: center center;
-      background-color: #625d58;
-      height: 2px;
-      left: 0;
-      position: absolute;
-      width: 24px; }
-      header .toggle span.toggle__top {
-        top: 4px; }
-      header .toggle span.toggle__centre {
-        opacity: 1;
-        top: 11px; }
-      header .toggle span.toggle__bottom {
-        bottom: 4px; }
-    header .toggle.toggle--close span {
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      transition: all 0.3s ease-in-out; }
-      header .toggle.toggle--close span.toggle__top {
-        -moz-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-        transform: rotate(45deg);
-        top: 11px; }
-      header .toggle.toggle--close span.toggle__centre {
-        opacity: 0; }
-      header .toggle.toggle--close span.toggle__bottom {
-        -moz-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -webkit-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        bottom: 11px; }
+    @media screen and (max-width: 800px) {
+      header .toggle {
+        display: block;
+        right: 0;
+        top: 0; } }
 
 .sg-logo {
   left: 48px;
@@ -313,7 +325,8 @@ header {
   -moz-transition: opacity 0.5s ease-in-out;
   -o-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
-  opacity: 0;
+  background-color: pink;
+  opacity: 1;
   position: absolute;
   right: 48px;
   top: 48px;
@@ -362,7 +375,6 @@ header {
   bottom: 0;
   left: 0;
   opacity: 1;
-  overflow-y: scroll;
   position: absolute;
   right: 0;
   top: 0;
@@ -386,6 +398,12 @@ header {
       -moz-flex-flow: column wrap;
       -ms-flex-flow: column wrap;
       flex-flow: column wrap; } }
+  .block.block--contact .toggle--close {
+    display: none;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    z-index: 5000; }
   @media screen and (max-width: 800px) {
     .block.block--contact article {
       margin-bottom: 24px; } }
